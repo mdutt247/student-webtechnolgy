@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript">
+function detectBrowser()
+{
+var browser=navigator.appName;
+var b_version=navigator.appVersion;
+var version=parseFloat(b_version);
+if ((browser=="Netscape"||browser=="Microsoft Internet Explorer") && (version>=6))
+{
+alert("Your browser is good enough!");
+}
+else
+{
+alert("It's time to upgrade your browser!");
+}
+}
+</script>
+</head>
+<body onload="detectBrowser()">
+</body>
+</html>

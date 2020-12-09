@@ -1,0 +1,45 @@
+<html>
+<head><title>Change Font Style Using Checkboxes</title>
+<script>
+function fnItalics()		//use fontStyle italic
+{
+	if (document.getElementById("txtValue").style.fontStyle == "italic")
+        document.getElementById("txtValue").style.fontStyle = "normal";
+    else
+        document.getElementById("txtValue").style.fontStyle = "italic";
+}
+function fnBold()			//use fontWeight bold
+{
+	if (document.getElementById("txtValue").style.fontWeight == "bold")
+		document.getElementById("txtValue").style.fontWeight = "normal";
+	else
+		document.getElementById("txtValue").style.fontWeight = "bold";
+}
+function fnUnderline()		//use textDecoration underline
+{
+	if (document.getElementById("txtValue").style.textDecoration == "underline")
+		document.getElementById("txtValue").style.textDecoration = "none";
+	else
+		document.getElementById("txtValue").style.textDecoration = "underline";        
+}
+function fnStrike()			//use textDecoration line-through
+{
+	if (document.getElementById("txtValue").style.textDecoration == "line-through")
+		document.getElementById("txtValue").style.textDecoration = "none";
+	else
+		document.getElementById("txtValue").style.textDecoration = "line-through";
+}
+</script>
+</head>
+<body>
+<p>Enter a string:
+<input tpye="text" id ="txtValue" value="Madhavendra Dutt"></p>
+<br>
+<p>Change font style of text in above text box</p>
+<input type="checkbox" onchange="fnItalics()"> <i>ITALIC</i> <br />
+<input type="checkbox" onchange="fnBold()"> <b>BOLD</b> <br>
+<input type="checkbox" onchange="fnUnderline()"> <u>UNDERLINE</u> <br />
+<input type="checkbox" onchange="fnStrike()"> <strike>STRIKE</strike> <br>
+</body>
+</html>
+

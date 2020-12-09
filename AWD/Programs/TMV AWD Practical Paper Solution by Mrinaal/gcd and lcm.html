@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Gcd and Lcm of 2 numbers</title>
+</head>
+<body>
+<h1>Gcd and Lcm of Two numbers</h1>
+<br><br>
+<button onclick="check()">Run</button>
+<br>
+<br>
+<p id="demo"><i>Answer..</i></p>
+
+<script>
+function check()
+ {
+  var x = parseInt(prompt("enter number 1"));
+  var y = parseInt(prompt("enter number 2"));
+  var i,gcd,lcm;
+  
+  for(i=1; i<=x && i<=y ;i++)
+    {
+	 
+	  if(x%i==0 && y%i==0)
+	    {
+		  gcd = i;
+		}
+
+     }
+
+   lcm = (x*y)/gcd;
+
+  document.getElementById('demo').innerHTML = "Gcd =&emsp;"+gcd+"<br>Lcm =&emsp;"+lcm;   
+	 
+ }
+</script>
+
+</body>
+</html>

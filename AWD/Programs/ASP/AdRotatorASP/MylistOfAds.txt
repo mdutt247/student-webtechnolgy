@@ -1,0 +1,11 @@
+WIDTH 252 
+HEIGHT 253
+* 
+/image1.jpg
+http://www.google.co.in/ 
+Visit google.co.in 
+30 
+/image2.jpg 
+http://www.madhavendra.xyz
+Visit madhavendra.xyz
+70

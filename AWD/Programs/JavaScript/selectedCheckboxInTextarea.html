@@ -1,0 +1,32 @@
+<html>
+<head><title>Print selected orders to textarea</title></head>
+<script type="text/javascript">
+function getOrder(){
+	var checkboxes = document.getElementsByName('items[]');
+	var vals = "";
+	for (var i=0, n=checkboxes.length; i<n; i++){
+		if (checkboxes[i].checked) {
+			vals += ", " + checkboxes[i].value;
+		}
+	}
+	if (vals){
+	vals = vals.substring(2); //to remove leading ", "
+	document.getElementsByName('txtOrder')[0].value = vals;
+	}
+	else{
+	document.getElementsByName('txtOrder')[0].value = "Nothing selected";
+	}
+}
+</script>
+<body>
+<h3>Please select from the following items</h3>
+<input type="checkbox" name="items[]" value="Panipuri" />Panipuri<br />
+<input type="checkbox" name="items[]" value="Bhel" />Bhel<br />
+<input type="checkbox" name="items[]" value="Batata Vada" />Batata Vada<br />
+<input type="checkbox" name="items[]" value="Kachori" />Kachori<br /><br />
+<input name="showOrder" type="button" value="Order" onclick="getOrder()" />
+<br /><br />
+<h3>You ordered:<h3>
+<textarea name="txtOrder" rows="3" cols="30"></textarea>
+</body>
+</html>

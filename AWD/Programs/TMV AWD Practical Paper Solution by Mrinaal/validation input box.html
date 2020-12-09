@@ -1,0 +1,70 @@
+<html>
+
+  <head>
+    <title>Validation </title>
+  </head>
+  
+  <body>
+  
+    <h2>Validation of input box</h2>
+    <br><br>
+	
+    <h4>Text field must be filled:</h4>
+    <form onsubmit="return validate1()">
+      <input type = "text" id="temp" placeholder="enter something">
+      <input type="submit">
+    </form>
+    <br><br>
+	
+    <h4>Enter atleast 8 digits:</h4>
+    <form onsubmit="return validate2()">
+      <input type="password" id="pass" placeholder="Enter password">
+      <input type="submit">
+    </form>
+    <br><br>
+	
+    <h4>Enter valid Email:</h4>
+    <form onsubmit="return validate3()">
+      <input type="text" id="e" placeholder="Enter e-id">
+      <input type="submit">
+    </form>
+
+
+  <script>
+    function validate1()
+      {
+        var n = document.getElementById('temp').value;
+        if(n=="" || n==null)
+           {
+             alert("Field required");
+             return false;
+           }
+      }
+
+    function validate2()
+      {
+        var p = document.getElementById('pass').value;
+        if(p.length<8)
+           {
+             alert("Enter atleast 8 characters");
+             return false;
+           }
+      }
+
+    function validate3()
+      {
+        var email = document.getElementById('e').value;
+        var x = email.indexOf("@");
+        var y = email.lastIndexOf(".");
+
+        if(x<1 || y<x+2 || y+2>=email.length)
+           {
+             alert("Enter a valid email");
+             return false;
+           }
+      }
+	  
+  </script>
+
+  </body>
+</html>

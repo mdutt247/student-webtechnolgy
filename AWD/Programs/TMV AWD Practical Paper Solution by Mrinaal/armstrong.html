@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Armstrong B/w 1-1000</title>
+</head>
+<body>
+
+<script>
+var n,sum,rem,temp;
+var txt = "Armstrong numbers between 1 - 500 are: <br>";
+
+for(n=1;n<=500;n++)
+  {
+    sum = 0;
+	temp = n;
+	while(temp!=0)
+	 {
+	  rem = temp%10;
+	  sum = sum + Math.pow(rem,3);
+	  temp = parseInt(temp/10);
+	 }
+	 if(n==sum)
+	  {
+	   txt = txt+" "+n+"<br>";
+	  }
+  }
+document.write(txt);
+
+</script>
+</body>
+</html>

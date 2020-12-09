@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>check palindrome</title>
+</head>
+<body>
+<script>
+
+var txt = prompt("Enter a string");
+var orignal = txt;
+txt = txt.toLowerCase();
+var temp = txt;
+txt = txt.split("");
+txt = txt.reverse();
+txt = txt.join("");
+
+if(temp==txt)
+ {
+ alert(orignal+" is palindrome");
+ }
+ else
+ {
+ alert(orignal+" is not palindrome");
+ }
+ 
+</script>
+
+</body>
+</html>

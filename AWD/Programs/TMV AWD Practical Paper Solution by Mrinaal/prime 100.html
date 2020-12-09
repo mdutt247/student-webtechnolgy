@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Prime no. b/w 1-100</title>
+</head>
+<body>
+<script>
+var i,n,flag;
+var txt = "<h4>Prime no.s b/w 1-100 are : </h4><hr>";
+
+for (n=2;n<=100;n++)
+  {
+    flag = 0;
+	
+	 for(i=2;i<=n-1;i++)
+	  {
+        if(n%i==0)
+		 {
+		  flag=1;
+		  break;
+		 }
+	  }
+	  
+	 if(flag==0)
+	  {
+	   txt = txt +n+"<br>";
+	  }
+  }
+document.write(txt);
+</script>
+</body>
+</html>

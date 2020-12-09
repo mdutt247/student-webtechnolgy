@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Cubes from 1-15</title>
+</head>
+<body>
+<h1>Cubes from 1 - 15</h1>
+<br>
+<h3 id="demo"></h3>
+<script>
+var i;
+var txt = "";
+for (i = 1;i <= 15; i++) {
+    txt = txt +"Cube of "+i+" = "+Math.pow(i,3)+"<br>";
+}
+document.getElementById('demo').innerHTML = txt;
+</script>
+</body>
+</html>

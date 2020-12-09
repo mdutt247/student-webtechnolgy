@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+.active{
+  
+  background-color: black;
+}
+.normal{
+  
+  background-color: green;
+}
+div{
+  width: 10px;
+  height: 50px;
+  }
+  </style>
+  
+  </head>
+  <body>
+  <div id="b3">
+  
+  </div>
+  <br>
+    <div id="b6">
+  
+  </div>
+ <script>
+  var myVar = parseInt(prompt("Please enter value", "1"));
+
+if(myVar == 1){
+  document.getElementById("b3").className = "active";
+  document.getElementById("b6").className = "active";
+}
+else{
+  document.getElementById("b3").className = "normal";
+  document.getElementById("b6").className = "normal";
+}
+</script>
+</body>
+</html>

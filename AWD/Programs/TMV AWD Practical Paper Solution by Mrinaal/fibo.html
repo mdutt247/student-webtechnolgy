@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Fibnacci series</title>
+</head>
+<body>
+<input id="num" type="text" placeholder="Enter no of terms"><br><br>
+<input type="button" value="See result" onclick="fibo()"><br><hr>
+<p id="demo"></p>
+<script>
+function fibo()
+ {
+var n = parseInt(document.getElementById('num').value);
+var txt = n+" fibonacci terms are: <br><br>";
+var a=0,b=1,c,i;
+txt = txt + a +"<br>"+b+"<br>";
+for(i=1;i<=n-2;i++)
+  {
+   c = a+b;
+   txt = txt + c +"<br>";
+   a=b;
+   b=c;
+  }
+document.getElementById('demo').innerHTML = txt;
+ }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+ASP AdRotator Component
+
+
+The ASP AdRotator component creates an AdRotator object that displays a different image each time a user enters or refreshes a page. A text file includes information about the images.
+
+Note: The AdRotator does not work with Internet Information Server 7 (IIS7). 
+
+Solution is there in asp file :)
+
+
+advertisement txt file will have following entries:
+
+In the first line we must include the character  "*", and starting in second line, each four lines we will include information related to one ad (first ad in red, second ad in blue). 
+Information related to each ad must be write in four lines as shown above. Ad related information will be introduced in the order used in the example:
+
+1st line: location of imagen2nd line: click url3rd line: defauld text4th line: relative frecuency for this ad
+
+A conventional link will be like this: 
+    <A HREF="http://www.domain1.com"><IMG SRC="/image1.gif"  ALT="Visit domain1.com"></A> 
+
+
+refer for more details:
+
+http://www.w3schools.com/asp/asp_adrotator.asp
+
+http://www.asptutorial.info/sscript/adrotator.html
+
+http://www.triconsole.com/asp/ad_rotator_component.php
+

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Manipulating Textarea</title>
+</head>
+<body>
+<input type="text" placeholder="Enter a number" id="num"><button onclick="find()">Click</button>
+<br>
+<br>
+<textarea rows="14" cols="30" id="result" disabled>Answer...</textarea>
+
+<script>
+function find(){
+var n = parseInt(document.getElementById('num').value);
+var txt = "Table of "+n+" is:\n\n";
+var i;
+for(i=1;i<=10;i++)
+{
+txt = txt + n +" x "+ i +" = "+n*i+"\n";
+}
+document.getElementById('result').innerHTML = txt;
+}
+</script>
+</body>
+</html>

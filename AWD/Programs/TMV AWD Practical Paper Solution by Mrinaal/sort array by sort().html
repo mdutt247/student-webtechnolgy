@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Arranging array by sort()</title>
+</head>
+
+<body>
+<h1>Arranging array elements by sort() </h1>
+<br><br><br>
+<button onclick="run()">Run</button><br><br>
+<p id="demo">Answer..</p>
+
+<script>
+function run()
+{
+var arr = new Array(5);
+var i;
+
+for(i=0;i<=4;i++)
+  {
+    arr[i] = parseInt(prompt("enter number "+parseInt(i+1)));
+  }
+
+arr.sort( function (a,b){return a-b}); 
+
+  document.getElementById('demo').innerHTML = "Array in ascending = ["+arr+"]";
+}
+</script>
+
+
+</body>
+
+</html>

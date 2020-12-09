@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Minimum of 3 by ternary operator</title>
+</head>
+<body>
+<h2>Minimum of 3 by Ternary operator</h2>
+<br><br><br>
+<button onclick="check()">Run program</button>
+<script>
+function check()
+{
+var x = parseInt(prompt("Enter number 1"));
+var y = parseInt(prompt("Enter number 2"));
+var z = parseInt(prompt("Enter number 3"));
+var c;
+
+c = (x<y)?((x<z)?x:z):((y<z)?y:z);
+
+alert("smallest number is "+c);
+
+
+}
+</script>
+
+
+
+
+</body>
+</html>

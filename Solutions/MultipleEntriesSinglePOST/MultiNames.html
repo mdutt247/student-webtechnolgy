@@ -1,0 +1,176 @@
+<HTML>
+
+<HEAD>
+<TITLE>Multiple entries from a single page</TITLE>
+
+<SCRIPT Language="JavaScript">
+// global arrays, to save info collected
+arNames  = new Array( "*" );
+arNums   = new Array( "*" );
+arEMails = new Array( "*" );  
+arPhones = new Array( "*" );
+empCount = 0;
+
+function addEmp( )
+{
+    theForm = document.mpForm;
+    // miniscule validation...you should do better!
+    if (    theForm.EmpName.value.length == 0
+         || theForm.EmpNum.value.length == 0
+         || theForm.EmpEMail.value.length == 0
+         || theForm.EmpPhone.value.length == 0 )
+    {
+        alert("One or more fields was not filled in!");
+        return;
+    }
+
+    // we accept the input...
+    ++empCount;
+    // add info to arrays
+    arNames[empCount]  = theForm.EmpName.value
+    arNums[empCount]   = theForm.EmpNum.value
+    arEMails[empCount] = theForm.EmpEMail.value
+    arPhones[empCount] = theForm.EmpPhone.value
+
+    // and add name to the select list...
+    toLoc = theForm.EmpList.length;
+    theForm.EmpList.options[toLoc] = 
+          new Option( "    " + theForm.EmpName.value, empCount );
+
+    // clear out the form...
+    theForm.EmpName.value = "";
+    theForm.EmpNum.value = "";
+    theForm.EmpEMail.value = "";
+    theForm.EmpPhone.value = "";
+    // and get ready to enter next name:
+    theForm.EmpName.focus( );
+}
+
+function submitAll( )
+{
+    theForm = document.mpForm;
+    if (    theForm.EmpName.value.length != 0
+         || theForm.EmpNum.value.length != 0
+         || theForm.EmpEMail.value.length != 0
+         || theForm.EmpPhone.value.length != 0 )
+    {
+        msg = "You have entered some information about another\n" +
+              "person into the form but you have not yet added\n" +
+              "that person to the list to be submitted.\n\n" +
+              "Are you SURE you want to submit the list without\n" +
+              "adding this other person?";
+
+        if ( ! confirm( msg ) )
+        {
+            return;
+        }
+    }
+
+    // just put the final values into the hidden fields:
+	delimiter = "$\b$"; // use something that the user can
+	                    // not possibly type into a form field!
+    theForm.allNames.value  = arNames.join(delimiter);
+    theForm.allNums.value   = arNums.join(delimiter);
+    theForm.allEMails.value = arEMails.join(delimiter);
+    theForm.allPhones.value = arPhones.join(delimiter);
+    // and go!
+    theForm.submit( );
+}
+
+function removeOne( )
+{
+    theList = document.mpForm.EmpList;
+    zap = theList.selectedIndex;
+    if ( zap == 0 ) return; // can't zap the heading
+
+    msg = "Are you sure you want to remove this person?" +
+          "\nName: " + arNames[zap] + "\nBadge: " + arNums[zap] +
+          "\nEMail: " + arEMails[zap] + "\nPhone: " + arPhones[zap];
+    if ( ! confirm( msg ) )
+    {
+        return;
+    }
+
+    // move all items past the zapped on up a slot
+    // in the various arrays:
+    for ( ix = zap; ix < empCount; ++ix )
+    {
+        arNames[ix]  = arNames[ix+1];
+        arNums[ix]   = arNums[ix+1];
+        arEMails[ix] = arEMails[ix+1];
+        arPhones[ix] = arPhones[ix+1];
+    }
+
+    // shrink the arrays
+    arNames.length = empCount;
+    arNums.length = empCount;
+    arEMails.length = empCount;
+    arPhones.length = empCount;
+
+    // and say one person removed
+    --empCount; 
+
+    // and fix up the list
+    theList.options[zap] = null;
+    theList.selectedIndex = 0;
+}
+
+function clearSelect( )
+{
+	// this function is not needed with MSIE, but
+	// it doesn't hurt to use it...
+    theList = document.mpForm.EmpList;
+	for ( ix = theList.options.length-1; ix > 0; --ix )
+	{
+		theList.options[ix] = null;
+	}
+    theList.selectedIndex = 0;
+    // and get ready to enter first name:
+    document.mpForm.EmpName.focus( );
+}
+</SCRIPT>
+
+</HEAD>
+
+<BODY onLoad="clearSelect( );">
+
+<FORM Action="MultipleProcess.asp" Name="mpForm" Method="Post">
+
+<TABLE Border=0 CellPadding=10>
+<TR Width="100%">
+    <TD Width="50%">
+        <B><I>Please fill in all fields for each person!</I></B>
+        <P>
+        Name: <INPUT Name="EmpName" Size=40><br>
+        Badge Number <INPUT Name="EmpNum" Size=10><br>
+        Email: <INPUT Name="EmpEMail" Size=40><br>
+        Phone: <INPUT Name="EmpPhone" Size=20>
+        <P>
+        <INPUT Type=Button Value="Add this employee to list"
+               onClick="addEmp( );" >
+    </TD>
+    <TD Width="50%" align=center>
+        <B><I>List of names added so far:</I></B>
+        <P>
+        <SELECT Name="EmpList" Size=10>
+        <OPTION Value="0">
+        Select a name and click on button to remove it.
+        </SELECT>
+        <P>
+        <INPUT Type=Button Value="Remove selected name"
+                onClick="removeOne( );"
+        <br>
+        <INPUT Type=Button Value="Submit all names"
+                onClick="submitAll( );" >
+    </TD>
+</TR>
+</TABLE>
+
+<INPUT TYPE="Hidden" Name="allNames">
+<INPUT TYPE="Hidden" Name="allNums">
+<INPUT TYPE="Hidden" Name="allEMails">
+<INPUT TYPE="Hidden" Name="allPhones">
+
+</FORM>
+</BODY>
+</HTML>

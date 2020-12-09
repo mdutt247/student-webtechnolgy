@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<title>All factors of a number</title>
+</head>
+
+<body>
+
+  <input type="number" placeholder="Enter a number" id="num"><br><br>
+  <button onclick="check()">Click here</button><hr>
+  <p id="demo">Answer...</p>
+
+  <script>
+        function check()
+		  {
+		    var n = parseInt(document.getElementById('num').value);
+            var i;
+			var txt = "Factors of "+n+" are:<br>";
+			
+			for (i=1;i<=n;i++)
+			  {
+			    if(n%i==0)
+				  {
+				    txt = txt +i+"<br>";
+				  }
+			  }
+			  
+			document.getElementById('demo').innerHTML = txt;
+		  }
+
+
+  </script>
+
+</body>
+</html>

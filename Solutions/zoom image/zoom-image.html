@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Zoom </title>
+	
+		<script type="text/javascript" language="javascript">  
+          
+        function ZoomOut() {  
+            var ZoomOutValue = parseInt(document.getElementById("divContent").style.zoom) - 10 + '%'  
+            document.getElementById("divContent").style.zoom = ZoomOutValue;  
+            return false;  
+        } 
+		
+		 function ZoomIn() {  
+            var ZoomInValue = parseInt(document.getElementById("divContent").style.zoom) + 30 + '%'  
+            document.getElementById("divContent").style.zoom = ZoomInValue;  
+            return false;  
+        } 
+		
+         function Zoomorg() {  
+            var ZoomOutValue = parseInt(100) + '%'  
+            document.getElementById("divContent").style.zoom = ZoomOutValue;  
+            return false;  
+        }  
+
+    </script>  
+</head>
+<body>
+Click on image to zoom. To resize to original move the mouse outside image.<br> 
+<div id="divContent" style="zoom: 100%">  
+<img src="./image/sleeping.jpg"  onmouseout="return Zoomorg();" OnClick="return ZoomIn();" ></img>     
+</div>
+</body>
+</html>

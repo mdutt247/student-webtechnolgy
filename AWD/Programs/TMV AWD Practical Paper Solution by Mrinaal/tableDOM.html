@@ -1,0 +1,45 @@
+<html>
+<body>
+<table border="1" cellpadding="15" id="myTable">
+<tr>
+	<td>Mrinaal</td>
+	<td>Paliwal</td>
+</tr>
+<tr>
+	<td>Mohit</td>
+	<td>Roy</td>
+</tr>
+<tr>
+	<td>Ram</td>
+	<td>Bhagwan</td>
+</tr>
+</table><br>
+<table cellpadding="15">
+<tr>
+<td><button onclick="insertrow()">click to insert row</button></td>
+<td><button onclick="updatecell()">click to update content</button></td>
+<td><button onclick="deleterow()">Click to delete a row</button></td>
+</tr>
+</table>
+
+<script>
+function insertrow(){
+var x = document.getElementById('myTable').insertRow(0);
+var y = x.insertCell(0);
+var z = x.insertCell(1);
+y.innerHTML = z.innerHTML = "New";
+}
+function updatecell(){
+var r = prompt("Enter the row") - 1;
+var c = prompt("Enter the cell") - 1;
+var txt = prompt("Enter new content");
+document.getElementById('myTable').rows[r].cells[c].innerHTML = txt;
+}
+function deleterow(){
+var n = prompt("Enter the row to delete") - 1;
+document.getElementById('myTable').deleteRow(n);
+
+}
+</script>
+</body>
+</html>

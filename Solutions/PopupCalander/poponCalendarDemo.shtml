@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>Popup Calendar Demo</TITLE>
+
+<STYLE>
+   TD { font-family: arial, helvetica, sans-serif; 
+        font-size: 8pt;
+        font-weight: bold;
+        color: black;
+    	text-align: center;
+	    cursor: hand;
+      }
+   TH { font-family: arial, helvetica, sans-serif; 
+        font-size: 8pt;
+        color: black;
+	    text-align: center;
+	    cursor: default;
+      }
+</STYLE>
+
+<!-- #include file="./poponCalendarHead.inc" -->
+
+</HEAD>
+
+<BODY>
+
+<!-- #include file="./poponCalendarBody.inc" -->
+
+Just a demo to show that you can put an INPUT tag anyplace on the page 
+and add the ONCLICK event handler to open the calendar and the included
+code files do all the rest!
+<P> 
+Note that if you click on the Month or Year in any popup calendar, 
+a drop-down <select> appears so that you can quickly change to any month or year.
+<P> 
+<P> 
+<P> 
+<FORM>
+An all-defaults calendar here: 
+<INPUT Name="demo1" readonly onClick="openCalendar(this);">
+<P> 
+<P> 
+<P> 
+And then a FORMAT="DMMMY" calendar somewhere in this neighborhood: 
+    <INPUT Name="demo2" readonly ID="demo2:DMMMY:0" onClick="openCalendar(this);">
+<P> 
+And a format="YMD" calendar:
+    <INPUT Name="demo4" readonly ID="demo4:YMD:0" onClick="openCalendar(this);">
+<P> 
+<P> 
+And lastly a FORMAT="DMY" calendar that has Monday as first day of week at left edge:<br />
+<INPUT Name="demo3" readonly ID="demo3:DMY:1" onClick="openCalendar(this);">
+
+</FORM>
+
+
+</BODY>
+</HTML>

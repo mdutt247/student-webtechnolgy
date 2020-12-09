@@ -1,0 +1,114 @@
+<html>
+
+  <head> 
+  
+    <title>Append and changing text</title>
+	
+    <link rel="stylesheet" href="css.css">
+	
+    <script>
+	
+      function add()   //This function concatenates 2 strings. 
+      {
+       var demo1=document.getElementById('get1').value;
+       var demo2=document.getElementById('get2').value;
+       document.getElementById('result').innerHTML= demo1+" "+demo2;
+      }
+	  
+      function change()   //This function changes the text color.
+      {
+      var x=document.getElementById('color').value;
+      document.getElementById('new').style.color=""+x;
+      }
+	  
+      function changes()   //This function changes font attributes as per user requirements.
+	  {
+	  document.getElementById('new').style.fontWeight="normal";
+	  document.getElementById('new').style.textDecoration="none";
+	  document.getElementById('new').style.fontStyle="normal";
+      var tag=document.getElementById('select').value;
+        if(tag=="bold" || tag=="b+i" || tag=="b+s" || tag=="b+u" || tag=="b+i+s" || tag=="b+i+u"){
+        document.getElementById('new').style.fontWeight="bold";
+        }
+        if(tag=="italic" || tag=="b+i" || tag=="i+s" || tag=="i+u" || tag=="b+i+s" || tag=="b+i+u"){
+        document.getElementById('new').style.fontStyle="italic";
+        }
+        if(tag=="strike" || tag=="b+s" || tag=="i+s" || tag=="b+i+s"){
+        document.getElementById('new').style.textDecoration="line-through";
+		}
+        if(tag=="underline" || tag=="b+u" || tag=="b+i+u" || tag=="i+u"){
+        document.getElementById('new').style.textDecoration="underline";
+        }
+      }
+	  
+	  function bchange()   //this function changes the background color of text.
+	  {
+	  var bg=document.getElementById('bgcolor').value;
+	  document.getElementById('new').style.backgroundColor=""+bg;
+	  }
+	  
+    </script>
+	
+  </head>
+  
+  <body>
+  
+      <h1>Input text in boxes to append them</h1>
+	  
+           <form>
+                 <input  type="text" id="get1" placeholder="enter string 1">
+                 <input  type="text" id="get2" placeholder="enter string 2">
+            </form>
+			
+      <br />
+	  
+      <b><p id="result"></p></b>
+	  
+           <div>
+                <button type="button" onclick="add()">CLick me</button>
+           </div>
+		   
+      <hr />
+      <br />
+	  
+      <h1 id="play">Play with your text below:</h1>
+      <p id="new">A random text</p>
+	  
+            <form>
+			
+                 <fieldset>
+				 
+				        <legend id="leg">Options</legend>
+				 
+                 Select text color:<br><br>
+				 
+                        <input type="color" id="color" onchange="change()"><br><br>
+						
+	             Select Background color:<br><br>
+				 
+	                    <input type="color" id="bgcolor" onchange="bchange()"><br><br>
+						
+                 Change Font type:<br><br>
+				 
+                        <select onchange="changes()" id="select" ><br>
+						
+                                <option value="bold" >Bold</option>
+                                <option value="italic">Italics</option>
+                                <option value="strike">Strike</option>
+                                <option value="underline">Underline</option>
+	                            <option value="b+i">Bold+Italics</option>
+	                            <option value="b+u">Bold+Underline</option>
+	                            <option value="b+s">Bold +Strike</option>
+	                            <option value="i+s">Italics+Strike</option>
+	                            <option value="i+u">Italics+Underline</option>
+	                            <option value="b+i+s">Bold+Italics+Strike</option>
+	                            <option value="b+i+u">Bold+Italics+Underline</option>
+								
+	                    </select>
+						
+	             </fieldset>
+				 
+            </form>
+	
+  </body>
+</html>

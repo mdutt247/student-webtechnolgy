@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Check armstrong</title>
+</head>
+<body>
+<h2 style="text-align:center">Checking For Armstrong Numbers</h2>
+<script>
+var n = parseInt(prompt("enter a number"));
+var rem;
+var temp = n;
+var sum = 0;
+
+while(n!=0)
+{
+rem = n%10;
+sum = sum + Math.pow(rem,3);
+n = parseInt(n/10);
+}
+
+if(temp == sum)
+  {
+   alert("number is armstrong");
+   }
+else
+  {
+  alert("number is not armstrong");
+  }
+</script>
+</body>
+</html>

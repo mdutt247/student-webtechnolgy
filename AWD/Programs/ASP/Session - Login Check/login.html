@@ -1,0 +1,18 @@
+<html>
+<head><title>Login Page</title></head>
+<!--
+After successful login user is redirected to welcome page.
+If authentication is not successful then error page is displayed.
+We will make sure that anyone can not access welcome page without authentication, by SESSION variable. 
+-->
+<body>
+<form action="loginCheck.asp" method="post">
+  <fieldset>
+    <legend>Login:</legend>
+    Name: <input type="text" name="txtName"><br>
+    Password: <input type="password" name="txtPassword"><br>
+	<input type="submit" name="loginButton" value="Login">
+  </fieldset>
+</form>
+</body>
+</html>

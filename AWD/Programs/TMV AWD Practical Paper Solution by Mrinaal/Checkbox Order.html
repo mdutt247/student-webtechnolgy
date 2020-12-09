@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><b>Pls select your order:</b></p>
+<form name="myForm">
+<fieldset>
+<input type="checkbox" value="Pizza">Pizza<br><br>
+<input type="checkbox" value="Momos">Momos<br><br>
+<input type="checkbox" value="Noodles">Noodles<br><br>
+<input type="checkbox" value="Burger">Burger<br><br>
+<input type="checkbox" value="Misal Pav">Misal Pav
+</fieldset>
+</form>
+<br>
+<button onclick="order()">Submit</button><br><br><br>
+<textarea disabled id="demo" rows="15" cols="40">Your order will appear here..</textarea>
+
+<script>
+function order(){
+var i;
+var result="";
+var f = document.forms["myForm"];
+for(i=0;i<f.length;i++){
+if(f.elements[i].checked == true)
+result += f.elements[i].value+"\n";
+}
+if(result==""){
+document.getElementById('demo').innerHTML = "Kuch to sharam kar le\n\nFree m mil raha hai, daba le\n(jor se daba..jor se)";
+}
+else{
+document.getElementById('demo').innerHTML = "You ordered :\n\n"+result;
+}
+}
+</script>
+</body>
+</html>

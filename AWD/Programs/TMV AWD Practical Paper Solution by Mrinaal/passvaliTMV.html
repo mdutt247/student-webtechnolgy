@@ -1,0 +1,53 @@
+<html>
+<body>
+
+	<form onsubmit="return validate()">
+		<fieldset>
+			<legend>User Details:</legend>
+			Enter your name:<br>
+			<input type="text" name="fname"><br><br>
+			Enter your Phone number:<br>
+			<input type="text" name="Pno"><br><br>
+			Enter your password:<br>
+			<input type="password" name="pass"><br><Br>
+			<input type="submit">
+		</fieldset>
+	</form>
+	
+<script>
+function validate(){
+var input = document.getElementsByTagName("input");
+var name = input[0].value;
+var pno = input[1].value;
+var pass = input[2].value;
+var txt = "";
+var i;
+var alpha = /[A-Za-z]/g;
+var number = /[0-9]/g;
+   
+	if(name == ""){
+	txt += "Name should not be blank\n";
+	}
+	if(isNaN(pno)){
+	txt += "Phone number should only contain numbers\n";
+	}
+    if(!pass.match(alpha) || !pass.match(number)){
+	txt += "Password must be alphanumeric\n";
+	}
+	if(pass.length < 6){
+	txt += "Password must contain atleast 6 digits";
+	}
+	
+	if(txt!=""){
+	alert(txt);
+	return false;
+	}
+	else{
+	alert("Attempt successful!");
+	}
+	
+}
+</script>
+
+</body>
+</html>

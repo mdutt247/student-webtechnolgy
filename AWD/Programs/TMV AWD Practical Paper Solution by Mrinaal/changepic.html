@@ -1,0 +1,25 @@
+<html>
+<body align="center">
+<script>
+function change(x)
+{
+var y;
+if (x==0)
+  {
+   y="../images/background.jpg";
+  }
+else
+  {
+   y="../images/mrinaal.jpg";
+  }
+document.getElementById('demo').src=y;
+}
+
+</script>
+
+<img id="demo" src="../images/background.jpg" alt="pic1" height="300" width="300"></img>
+<br />
+<button type="button" onclick="change(0)">pic1</button>
+<button type="button" onclick="change(1)">pic2</button>
+</body>
+</html>

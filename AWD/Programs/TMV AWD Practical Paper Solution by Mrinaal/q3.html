@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Largest of 3 numbers</title>
+</head>
+<body>
+<h3>Largest of 3 numbers</h3>
+<br>
+<p id="demo" style="color:white;background-color:mediumseagreen"></p>
+<script>
+var x = parseInt(prompt("Enter number 1"));
+var y = parseInt(prompt("Enter number 2"));
+var z = parseInt(prompt("Enter number 3"));
+var result = (x>y)?((x>z)?x:z):((y>z)?y:z);
+document.getElementById('demo').innerHTML = "Largest number is "+result;
+</script>
+</body>
+</html>

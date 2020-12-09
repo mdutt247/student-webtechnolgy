@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Checking a number if valid.</title>
+</head>
+<body>
+<input type="text" placeholder="Enter something" id="x"><br><br>
+<button onclick="check()">Run</button><br><br>
+<p id="demo">Answer...</p>
+
+<script>
+function check()
+  {
+    var x = isNaN(parseInt(document.getElementById('x').value));
+	
+	if(x==true)
+	  {
+	   document.getElementById('demo').innerHTML = "Is not a valid number";
+	  }
+     else
+	  {
+	   document.getElementById('demo').innerHTML = "Is a valid number";
+      }
+  }
+</script>
+
+</body>
+</html>

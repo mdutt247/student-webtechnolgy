@@ -1,0 +1,22 @@
+<html>
+<body>
+
+<table border="1" cellpadding="15">
+<tr><th>Name</th><th>Marks</th></tr>
+<tr><td>Mrinaal</td><td>90</td></tr>
+<tr><td>Ram</td><td>100</td></tr>
+</table>
+<br>
+<a href="#" onclick="color()">Click me</a>
+
+<script>
+function color(){
+var td = document.getElementsByTagName("td");
+var i;
+for(i=0;i<td.length;i++){
+td[i].style.backgroundColor = "dodgerblue";
+}
+}
+</script>
+</body>
+</html>

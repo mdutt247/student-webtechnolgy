@@ -1,0 +1,33 @@
+<html>
+<body>
+<form name="myForm">
+<select id="mySelect" size="4">
+	<option value="A">A</option>
+	<option value="B">B</option>
+	<option value="C">C</option>
+</select>
+
+</form>
+<button onclick="removeIndex()">Remove</button>
+<button onclick="show()">Show total elements</button>
+<button onclick="display()">Show selected</button>
+<script>
+function removeIndex(){
+
+var x = document.getElementById('mySelect');
+x.remove(x.selectedIndex);
+
+}
+function show(){
+var x = document.getElementById('mySelect').length;
+alert(x);
+
+}
+function display(){
+var x = document.getElementById('mySelect');
+x = x.options[x.selectedIndex].text;
+alert("currently selected: "+x);
+}
+</script>
+</body>
+</html>

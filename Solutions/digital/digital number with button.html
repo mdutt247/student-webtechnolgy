@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Clock</title>
+<script src="myscript.js"></script>
+<style>
+body { display: block; margin: 10px;}
+table { border-collapse: collapse;}
+button, input[type="button"], input[type="submit"]  { width: 100%; height: 100%; }
+.active{ background-color: red;  border-style:none;}
+.inactive{ background-color: white;  border-style:none;}
+</style>
+</head>
+<body >
+    <form>
+	<center>
+	<p>Start&nbsp;<input type="text" id="txt1" placeholder="Enter a number upto 59"></p>
+	<p>End&nbsp;&nbsp;&nbsp;<input type="text" id="txt2" placeholder="Enter a number upto 59"></p>
+	<p><input type="button" style="height:21px;width:100px" value="Run" onclick="runIt()"/></p>
+	<table border="0">
+            <tr>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn8" style="height:30px;width:200px"></td>
+				<td rowspan="5" width="10px">&nbsp;</td>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn1" style="height:30px;width:200px"></td>
+            </tr>	
+            <tr>
+                <td width="30px" height="150px"><input type="button" id="btn9" style="width: 30px;"></td>
+                <td width="30px" height="150px" align="right"><input type="button" id="btn10" style="width: 30px;"></td>
+
+                <td width="30px" height="150px"><input type="button" id="btn2" style="width: 30px;"></td>
+                <td width="30px" height="150px" align="right"><input type="button" id="btn3" style="width: 30px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn11" style="height:30px;width:200px"></td>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn4" style="height:30px;width:200px"></td>      
+            </tr>
+            <tr>
+                <td width="30px" height="150px"><input type="button" id="btn12" style="width: 30px;"></td>
+                <td width="30px" height="150px" align="right"><input type="button" id="btn13" style="width: 30px;"></td>
+
+                <td width="30px" height="150px"><input type="button" id="btn5" style="width: 30px;"></td>
+                <td width="30px" height="150px" align="right"><input type="button" id="btn6" style="width: 30px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn14" style="height:30px;width:200px"></td>
+                <td colspan="2" width="260px" height="30px" align="center"><input type="button" id="btn7" style="height:30px;width:200px"></td>   
+            </tr>
+	</table>
+    </form>
+	</center>
+	--------------<br />
+	Debug info:<br />
+	--------------<br />
+	Loop-<div id="loop">&nbsp;</div>
+	Display-<div id="disp">&nbsp;</div>
+</body>
+</html>

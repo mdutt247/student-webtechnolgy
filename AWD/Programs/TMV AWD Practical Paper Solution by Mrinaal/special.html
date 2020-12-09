@@ -1,0 +1,26 @@
+<html>
+<body>
+<input type="text">
+<button onclick="check()">Check</button>
+
+
+<script>
+function check() {
+var filter = /[@$,<>#:?_*&;]/g;
+var x = document.getElementsByTagName("input")[0].value;
+
+if(x.match(filter)) {
+alert("valid");
+}
+else {
+alert("invalid");
+}
+
+
+}
+</script>
+
+
+
+</body>
+</html>

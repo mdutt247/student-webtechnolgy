@@ -1,0 +1,17 @@
+<html>
+<body>
+<p>Hello world</p><br>
+<p>Answer...</p><br><br>
+<button onclick="f()">Click</button>
+
+<script>
+function f() {
+var x = document.getElementsByTagName("p")[0].innerHTML;
+document.getElementsByTagName("p")[1].innerHTML = "Ooppps!.....&nbsp;" + x;
+}
+
+</script>
+
+
+</body>
+</html>

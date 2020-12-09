@@ -1,0 +1,36 @@
+<html>
+	<body>
+
+		<form name="myForm" onsubmit="return check()">
+			<input type="text" placeholder="Enter password"><br><br>
+			<input type="submit">
+		</form>
+
+	<script>
+		function check(){
+			var u = 0,l = 0,n = 0;
+			var i;
+			var x = document.forms["myForm"][0].value;
+			var al = "";
+			var punc = /[!@#$%^&*|'":;<,>.?]/g;
+
+			for (i = 0; i < x.length; i++){
+					if (x.charAt(i) <= "z" && x.charAt(i) >= "a")
+					{l = 1;}
+					if (x.charAt(i) <= "Z" && x.charAt(i) >= "A")
+					{u = 1;}
+					if (x.charAt(i) <= "9" && x.charAt(i) >= "0")
+					{n = 1;}
+			}
+			if (l != 1){al = al +"Password must contain 1 lowercase character.\n";}
+			if (u != 1){al = al +"Password must contain 1 uppercase character.\n";}
+			if (n != 1){al = al +"Password must contain 1 number.\n";}
+			if (!x.match(punc)){al = al +"Password must contain 1 special character.";}
+			if (al != "")
+			{alert(al);return false;}
+            else
+			{alert("Attempt successful");}
+        }
+	</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+alert("click event triggered");
+}
+function loading()
+{
+alert("onload event trigerred");
+}
+function key()
+{
+alert("keypress event trigerred");
+}
+</script>
+</head>
+<body onload="loading()">
+<form>
+<input type="text" onkeypress="key()"> <br>
+Click on the button to activate function.<br>
+<input type="button" value="Click me!" onclick="displaymessage()" >
+</form>
+</body>
+</html>

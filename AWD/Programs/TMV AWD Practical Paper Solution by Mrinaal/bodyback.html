@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Body color change</title>
+</head>
+<body  id="body">
+
+<button onclick="change()">Click</button>
+
+<button onclick="stop()">Stop</button>
+
+<script>
+var x=1;
+var tag;
+
+function change()
+  {
+    tag = setInterval(color,1000);
+  }
+
+
+function color()
+  {
+    if(x%2==0)
+       {
+         document.getElementById('body').style.backgroundColor = "yellow";
+       }
+     else
+       {
+         document.getElementById('body').style.backgroundColor = "dodgerblue";
+       }
+    x++;
+  }
+
+
+function stop()
+  {
+    clearTimeout(tag);
+  }
+
+</script>
+</body>
+</html>

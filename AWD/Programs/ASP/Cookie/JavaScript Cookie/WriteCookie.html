@@ -1,0 +1,35 @@
+<html>
+   <head>
+<!-- 
+Expires − The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.
+Domain − The domain name of your site.
+Path − The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.
+Secure − If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.
+Name=Value − Cookies are set and retrieved in the form of key-value pairs
+-->
+      <script type = "text/javascript">
+         <!--
+            function WriteCookie()
+            {
+               if( document.myform.customer.value == "" ){
+                  alert("Enter some value!");
+                  return;
+               }
+               cookievalue = escape(document.myform.customer.value) + ";";
+               document.cookie = "name=" + cookievalue;
+               document.write ("Setting Cookies : " + "name=" + cookievalue );
+            }
+         //-->
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form name="myform" action="">
+         Enter name: <input type="text" name="customer"/>
+         <input type="button" value="Set Cookie" onclick="WriteCookie();"/>
+      </form>
+   
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<SCRIPT LANGUAGE="JavaScript">
+function textCounter(field,cntfield,maxlimit) {
+if (field.value.length > maxlimit) // if too long...trim it!
+field.value = field.value.substring(0, maxlimit);
+// otherwise, update 'characters left' counter
+else
+cntfield.value = maxlimit - field.value.length;
+}
+//  End -->
+</script>
+
+<form name="myForm">
+<b>One Function to Count and Limit Multiple Form Text Areas</b><br>
+<textarea name="message1" wrap="physical" cols="28" rows="5"
+onKeyDown="textCounter(document.myForm.message1,document.myForm.remLen1,125)"
+onKeyUp="textCounter(document.myForm.message1,document.myForm.remLen1,125)"></textarea>
+<br>
+<input readonly type="text" name="remLen1" size="3" maxlength="3" value="125"> characters left
+
+<br>
+
+
+
+
+
+
+
+
+<textarea name="message2" wrap="physical" cols="28" rows="5"
+onKeyDown="textCounter(document.myForm.message2,document.myForm.remLen2,125)"
+onKeyUp="textCounter(document.myForm.message2,document.myForm.remLen2,125)"></textarea>
+<br>
+<input readonly type="text" name="remLen2" size="3" maxlength="3" value="125">
+characters left
+<br>
+</form>

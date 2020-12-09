@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>10 Fibonacci terms</title>
+</head>
+<body>
+<h1>10 Fibonacci terms are:</h1>
+<h4 id="demo"></h4>
+<script>
+var a = 0,b = 1,c,i;
+var txt = a+"<br>"+b+"<br>";
+for (i = 1;i <= 8;i++) {
+     c = a + b;
+	 txt += c + "<br>";
+	 a = b;
+	 b = c;
+}
+document.getElementById('demo').innerHTML = txt;
+</script>
+</body>
+</html>

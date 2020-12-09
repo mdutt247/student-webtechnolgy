@@ -1,0 +1,35 @@
+<html>
+<body>
+<input type="text" id="data">
+<button onclick="convert()">click here to convert</button><br>
+<p id='remo' style="display:none">The conversion in <br><br>binary,hexadecimal,octal and decimal :</p>
+<p id="demo"></p>
+<script>
+function convert()
+{
+
+var d = parseInt(document.getElementById('data').value);
+var result=[d.toString(2),d.toString(16),d.toString(8),d.toString(10)];
+var i;
+var txt="";
+for(i=0;i<=3;i++)
+  {
+  if(i!=3)
+  {
+  txt+=" "+result[i]+",";
+  }
+  else
+  {
+  txt+=" "+result[i];
+  }
+  }
+document.getElementById('remo').style.display="block";
+document.getElementById('demo').innerHTML=txt;
+}
+
+
+</script>
+
+
+</body>
+</html>

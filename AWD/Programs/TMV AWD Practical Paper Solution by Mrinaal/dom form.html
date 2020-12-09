@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<form name="myForm">
+<input type="text" name="name" value="Mrinaal">
+<input type="submit" value="Submit">&nbsp;&nbsp;
+</form>
+
+<br>
+<button onclick="display()">Try</button>
+<br>
+
+<p id="demo">Click "try" to see ...</p>
+
+<script>
+function display() {
+var l = document.forms.length;
+var fl = document.forms["myForm"].length;
+var f1 = document.forms["myForm"].elements[0].value;
+var f2 = document.forms["myForm"].elements[1].value;
+document.getElementById('demo').innerHTML = 
+"Total forms in webpage are : "+l+"<br>Total form elements in Form1 are : "+fl+"<br>Value of First Field : "+f1+"<br>Value of 2nd Field : "+f2;
+}
+</script>
+
+</body>
+</html>

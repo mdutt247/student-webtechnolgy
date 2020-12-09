@@ -1,0 +1,34 @@
+<html><head><title>Number key only</title></head>
+<body>
+    Numeric Value: <input type="text" id="text1" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" />
+   
+    <span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span>
+    
+    <script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+    </script>
+ 
+<!--
+Explanation:
+In the above HTML Markup I have a TextBox for which I have specified three event handlers, onkeypress, ondrop and onpaste.
+On the onkeypress event handler, I am making call to a JavaScript function IsNumeric. 
+This function first determines the ASCII code of the keyboard key and then verifies that its ASCII code 
+is within the range 48 to 57. Also it makes sure that the key pressed is not an special key like Backspace or Delete, 
+if yes then that too is excluded
+
+On the ondrop event handler, I have simply written return false so that the dropping functionality on the TextBox is disabled.
+On the onpaste event handler, I have simply written return false so that the pasting functionality on the TextBox is disabled.
+    
+    For more details on various Keyboard key ASCII code please visit
+    http://help.adobe.com/en_US/AS2LCR/Flash_10.0/help.html?content=00000520.html
+-->
+</body>   
+</html>

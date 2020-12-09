@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Watch on body.</title>
+  </head>
+  
+  <body>
+  
+    <h2 style="text-align:center;color:white;background-color:red">Watch</h2>
+    <br>
+    <hr width="30%" noshade />
+	
+    <div style="text-align:center">
+      <p style="font-family:monospace;font-size:30px"><span id="demo" style="background-color:powderblue"></span></p>
+      <button onclick="start()">Start watch</button>
+      <button onclick="stop()">Stop Watch</button>
+    </div>
+	
+    <hr width="30%" noshade />
+	
+	
+  <script>
+    var tag;
+
+   function start()
+    {
+	 tag = setInterval(watch,500);
+    }
+	
+   function watch()
+   {
+    var d = new Date();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    var s = d.getSeconds();
+	
+    if(m<10)
+    {
+     m = "0"+m;
+    }
+	
+   if(s<10)
+    {
+     s = "0"+s;
+    }
+	
+   if(h<10)
+    {
+     h = "0"+h;
+    }
+	
+    document.getElementById('demo').innerHTML = h+":"+m+":"+s;
+   }
+   
+   function stop()
+   {
+    clearTimeout(tag);
+   }
+
+</script>
+</body>
+</html>

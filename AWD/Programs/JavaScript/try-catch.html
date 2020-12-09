@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript">
+var txt=""
+
+adddlert(s)
+{
+return s;
+}
+
+function message()
+{
+try
+{
+var s="Welcome guest!"
+alert(adddlert(s));
+}
+catch(err)
+{
+txt="There was an error on this page.\n\n";
+txt+="Error description: " + err.description + "\n\n";
+txt+="Click OK to continue.\n\n";
+alert(txt);
+}
+}
+</script>
+</head>
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+</html>

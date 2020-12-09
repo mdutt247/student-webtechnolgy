@@ -1,0 +1,224 @@
+<html>
+<head>
+<script>
+    
+function form_valid()
+{
+ var a = document.my_form.usr1.value;
+ var b = document.my_form.usr2.value;
+ var c = document.my_form.usr3.value;
+ var d = document.my_form.usr4.value;
+ var e = document.my_form.usr5.value;
+ 
+ var sym = /[^a-zA-Z0-9 ]/gi;
+ var num = /[0-9]/gi;
+ 
+ if(a.match(sym))
+ {
+  document.getElementById('msg1').innerHTML = "&nbsp &nbsp Special Characters not allowed";
+  return false;
+ }
+ else
+ {
+  document.getElementById('msg1').innerHTML = null;
+ }
+ 
+ if(a.match(num))
+ {
+  document.getElementById('msg1').innerHTML = "&nbsp &nbsp Numbers not allowed";
+  return false;
+ }
+ else
+ {
+  document.getElementById('msg1').innerHTML = null;
+ }
+
+ 
+ if(a.length < 3)
+ {
+  if(a.length == "")
+  {
+   true;
+  }
+  else
+  {
+   document.getElementById('msg1').innerHTML = "&nbsp &nbsp Atleast 3 Characters";
+   return false;
+  }
+ }
+ else
+ {
+  document.getElementById('msg1').innerHTML = null;
+ }
+ 
+ if(a.length > 20)
+ {
+  document.getElementById('msg1').innerHTML = "&nbsp &nbsp Maximum 20 Characters";
+  return false;
+ }
+ else
+ {
+  document.getElementById('msg1').innerHTML = null;
+ }
+ 
+ if(a == "" || b == "")
+ {
+  if(a == "")
+  {
+  document.getElementById('msg1').innerHTML = "&nbsp &nbsp Please fill the text box";
+  return false;
+  }
+  else
+  {
+   document.getElementById('msg1').innerHTML = null;
+  }
+  if(b == "")
+  {
+  document.getElementById('msg2').innerHTML = "&nbsp &nbsp Please fill the password";
+  return false;
+  }
+  else
+  {
+   document.getElementById('msg2').innerHTML = null;
+  }
+ }
+ 
+ if(b.length < 5)
+ {
+  document.getElementById('msg2').innerHTML = "&nbsp &nbsp Minimum length of password is 5";
+  return false;
+ }
+ else
+ {
+  document.getElementById('msg2').innerHTML = null;
+ }
+ 
+ if(b.length > 25)
+ {
+  document.getElementById('msg2').innerHTML = "&nbsp &nbsp Maximum length of password is 25";
+  return false;
+ }
+ else
+ {
+  document.getElementById('msg2').innerHTML = null;
+ }
+ 
+ if(c == "")
+ {
+  document.getElementById('msg3').innerHTML = "&nbsp &nbsp Please confirm your password";
+  return false;
+ }
+  else
+ {
+  document.getElementById('msg3').innerHTML = null;
+ }
+  
+ if(b == c)
+ {
+  true;
+ }
+ else
+ {
+  document.getElementById('msg3').innerHTML = "&nbsp &nbsp Passwords do not match please try again";
+  return false;
+ } 
+  
+ if(d == "")
+ {
+  document.getElementById('msg4').innerHTML = "&nbsp &nbsp Please fill the Email Address";
+  return false;
+ }
+ else
+ { 
+  document.getElementById('msg4').innerHTML = null;
+ }
+ if(d.indexOf('@')<=0)
+ {
+  document.getElementById('msg4').innerHTML = "&nbsp &nbsp Invalid Email Address";
+  return false;
+ }
+ else
+ { 
+  document.getElementById('msg4').innerHTML = null;
+ }
+ if(d.charAt(d.length - 4)!='.' && d.charAt(d.length - 3)!='.')
+ {
+  document.getElementById('msg4').innerHTML = "&nbsp &nbsp Enter Proper domain after @";
+  return false;
+ }
+ else
+ { 
+  document.getElementById('msg4').innerHTML = null;
+ }
+
+ if(e == "")
+ {
+  document.getElementById('msg5').innerHTML = "&nbsp &nbsp Please Enter the Phone Number";
+  return false;
+ }
+ else
+ { 
+  document.getElementById('msg5').innerHTML = null;
+ }
+ if(e.match(num))
+ {
+  true;
+ }
+ else
+ {
+  document.getElementById('msg5').innerHTML = "&nbsp &nbsp Please Enter Numbers not symbols/characters";
+  return false;
+ }
+ 
+}
+
+
+function pass()
+{
+ var x1 = document.getElementById('pass1');
+ var x2 = document.getElementById('pass2');
+ if(x1.type === "password" && x2.type === "password")
+ {
+  x1.type = "text";
+  x2.type = "text";
+ }
+ else
+ {
+  x1.type = "password";
+  x2.type = "password";
+ }
+}
+
+
+
+</script>
+</head>
+<body>
+<legend><h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp SIGN UP</h1></legend>
+<fieldset style = "width : 800px">
+
+<form name = "my_form" onsubmit = "return form_valid()" method = "post" action = "Check.asp">
+
+<b  style = "margin-left : 80px">USERNAME : </b><input type = "text" name = "usr1" value="" placeholder = "username"></input>
+<span id = "msg1" style = "color : red ; font-weight : bold ; font-size : 20px"></span><br>
+
+<b style = "margin-left : 13.0px">CREATE PASSWORD : </b><input type = "password" name = "usr2" value="" id = "pass1" placeholder = "create password"></input>
+<span id = "msg2" style = "color : red ; font-weight : bold ; font-size : 20px"></span><br>
+
+<b>CONFIRM PASSWORD : </b><input type = "password" name = "usr3" value="" id = "pass2" placeholder = "confirm password"></input>
+<span id = "msg3" style = "color : red ; font-weight : bold ; font-size : 20px"></span><br>
+
+<input type = "checkbox" onclick = "pass()" style = "margin-left : 184.5px"></input><br>
+
+<b  style = "margin-left : 95.5px">EMAIL ID : </b><input type = "text" name = "usr4" value="" placeholder = "email"></input>
+<span id = "msg4" style = "color : red ; font-weight : bold ; font-size : 20px"></span><br>
+
+<b style = "margin-left : 40.0px">PHONE NUMBER : </b><input type = "text" name = "usr5" value="" placeholder = "phonenumber"></input>
+<span id = "msg5" style = "color : red ; font-weight : bold ; font-size : 20px"></span><br>
+
+<input type = "submit" value = "Submit" style = "margin-left : 183.5px" name = "submit" value = "submit"></input>
+
+</form>
+</fieldset>
+</body>
+</html>
