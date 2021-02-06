@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+    function toggleMe(val) 
+    {
+        var txtGST = document.getElementById('txtGST');
+        if(val=='0')
+        {
+            txtGST.style.display = "none";
+        }
+        else
+        {
+            txtGST.style.display = "block";
+        }
+    }
+</script>
+       
+<select name="select" onchange="toggleMe(this.value)">   
+    <option value="0">Select any one</option> 
+    <option value="0">No</option>  
+    <option value="yes">Yes</option> 
+</select>
+          
+<input name="txtGST" type="text" id="txtGST" />
